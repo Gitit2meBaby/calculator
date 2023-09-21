@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <title>Frontend Mentor | Calculator app</title>
+
+</head>
+
+<body>
+  <section class="app theme1">
+    <div class="head">
+      <div class="title">
+        <h1>calc</h1>
+      </div>
+      <div class="toggle-section">
+        <div class="theme-text">
+          <p>THEME</p>
+        </div>
+        <div class="toggle-wrapper">
+          <div class="theme-selection">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <div class="toggle">
+            <div class="thumb" id="thumb1" data-theme="theme1"></div>
+            <div class="thumb hidden" id="thumb2" data-theme="theme1"></div>
+            <div class="thumb hidden" id="thumb3" data-theme="theme1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="display">
+      <input type="number" id="display">0<>
+    </div>
+
+    <div class="button-grid">
+      <!-- Row 1 -->
+      <div id="btn7" class="btn">
+        <h3>7</h3>
+      </div>
+      <div id="btn8" class="btn">
+        <h3>8</h3>
+      </div>
+      <div id="btn8" class="btn">
+        <h3>9</h3>
+      </div>
+      <div id="delete" class="btn delete-btn">
+        <h3>DEL</h3>
+      </div>
+
+      <!-- Row 2 -->
+      <div id="btn4" class="btn">
+        <h3>4</h3>
+      </div>
+      <div id="btn5" class="btn">
+        <h3>5</h3>
+      </div>
+      <div id="btn6" class="btn">
+        <h3>6</h3>
+      </div>
+      <div id="btnAddition" class="btn">
+        <h3>+</h3>
+      </div>
+
+      <!-- Row 3 -->
+      <div id="btn1" class="btn">
+        <h3>1</h3>
+      </div>
+      <div id="btn2" class="btn">
+        <h3>2</h3>
+      </div>
+      <div id="btn3" class="btn">
+        <h3>3</h3>
+      </div>
+      <div id="btnMinus" class="btn">
+        <h3>-</h3>
+      </div>
+
+      <!-- Row 4 -->
+      <div id="btnDecimal" class="btn">
+        <h3>.</h3>
+      </div>
+      <div id="btn0" class="btn">
+        <h3>0</h3>
+      </div>
+      <div id="btnDivide" class="btn">
+        <h3>/</h3>
+      </div>
+      <div id="btnMultiply" class="btn">
+        <h3>x</h3>
+      </div>
+
+      <!-- Row 4 -->
+      <div id="btnReset" class="btn reset-btn">
+        <h3>RESET</h3>
+      </div>
+      <div id="btnEquals" class="btn equals-btn">
+        <h3>=</h3>
+      </div>
+    </div>
+
+
+    </div>
+
+  </section>
+
+</body>
+
+</html>

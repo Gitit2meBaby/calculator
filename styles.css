@@ -1,0 +1,186 @@
+/* Common variable names for all themes */
+:root {
+    /* Backgrounds */
+    --main-background: hsl(222, 26%, 31%);
+    --toggle-keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+
+    /* Keys */
+    --key-background: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+
+    /* Text */
+    --text-color: hsl(221, 14%, 31%);
+    --white-text: hsl(0, 0%, 100%);
+}
+
+.theme1 {
+    /* Backgrounds */
+    --main-background: hsl(222, 26%, 31%);
+    --toggle-keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+
+    /* Keys */
+    --key-background: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+
+    /* Text */
+    --text-color: hsl(221, 14%, 31%);
+    --white-text: hsl(0, 0%, 100%);
+}
+
+.theme2 {
+    /* Backgrounds */
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+
+    /* Keys */
+    --key-background: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+
+    /* Text */
+    --text-color: hsl(60, 10%, 19%);
+    --white-text: hsl(0, 0%, 100%);
+}
+
+.theme3 {
+    /* Backgrounds */
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+
+    /* Keys */
+    --key-background: hsl(281, 89%, 26%);
+    --key-shadow: hsl(285, 91%, 52%);
+
+    /* Text */
+    --text-color: hsl(52, 100%, 62%);
+}
+
+* {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background);
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* HEAD SECTION */
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white-text)
+}
+
+.toggle-section {
+    display: flex;
+    gap: .3rem;
+}
+
+.theme-text {
+    align-self: flex-end;
+}
+
+.theme-selection {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.2rem;
+}
+
+.theme-selection p {
+    font-size: .5rem;
+}
+
+.theme-text p {
+    font-size: .5rem;
+}
+
+/* TOGGLE */
+
+.toggle {
+    background-color: var(--toggle-keypad-background);
+    width: 10vw;
+    height: 4vw;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.thumb {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+#thumb1 {
+    background-color: rgba(243, 46, 46, 0.9);
+    margin-left: 0.15rem;
+}
+
+/* DISPLAY INPUT */
+.display {
+    background-color: var(--screen-background);
+    text-align: right;
+    color: var(--white-text);
+    border-radius: .3rem;
+    padding: 1rem .8rem;
+}
+
+/* GRID BUTTONS */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--toggle-keypad-background);
+    padding: 1rem;
+    gap: .8rem;
+    border-radius: .3rem;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: .3rem;
+    background-color: white;
+    color: var(--text-color);
+    border-bottom: 5px solid rgb(160, 160, 160);
+}
+
+.delete-btn {
+    background-color: var(--key-background);
+    color: var(--white-text);
+    border-bottom: 1px solid var(--key-shadow);
+}
+
+.reset-btn {
+    grid-column: span 2;
+    background-color: var(--key-background);
+    border-bottom: var(--key-shadow);
+    color: var(--white-text);
+}
+
+.equals-btn {
+    grid-column: span 2;
+    background-color: rgba(243, 46, 46, 0.9);
+    border-bottom: rgba(183, 35, 35, 0.9);
+    color: var(--white-text);
+}
