@@ -2,43 +2,70 @@ const thumb1 = document.querySelector("#thumb1");
 const thumb2 = document.querySelector("#thumb2");
 const thumb3 = document.querySelector("#thumb3");
 
-const display = document.querySelector("#display");
-
-const btn7 = document.querySelector("#btn7");
-const btn8 = document.querySelector("#btn8");
-const btn9 = document.querySelector("#btn9");
-const deleteButton = document.querySelector("#delete");
-
-const btn4 = document.querySelector("#btn4");
-const btn5 = document.querySelector("#btn5");
-const btn6 = document.querySelector("#btn6");
-const btnAddition = document.querySelector("#btnAddition");
-
-const btn1 = document.querySelector("#btn1");
-const btn2 = document.querySelector("#btn2");
-const btn3 = document.querySelector("#btn3");
-const btnMinus = document.querySelector("#btnMinus");
-
-const btnDecimal = document.querySelector("#btnDecimal");
-const btn0 = document.querySelector("#btn0");
-const btnDivide = document.querySelector("#btnDivide");
-const btnMultiply = document.querySelector("#btnMultiply");
-
 const btnReset = document.querySelector("#btnReset");
-const btnEquals = document.querySelector("#btnEquals");
-
-function updateDisplay() {
-
-}
 
 
-// JavaScript code to toggle themes
-const container = document.querySelector('.container');
-const themeButtons = document.querySelectorAll('.theme-button');
 
-themeButtons.forEach(button => {
+
+
+const numberBtns = document.querySelectorAll('.number-btn');
+const display = document.querySelector("#display");
+let initialZeroReplaced = false;
+
+
+// NUMBER BUTTON INPUTS
+numberBtns.forEach(function (button) {
     button.addEventListener('click', () => {
-        const themeClass = button.dataset.theme;
-        container.className = `container ${themeClass}`;
+        const buttonText = button.textContent;
+
+        if (!initialZeroReplaced) {
+            display.textContent = buttonText;
+            initialZeroReplaced = true;
+        } else {
+            display.textContent += buttonText;
+        }
     });
 });
+
+// DELETE BUTTON
+const deleteButton = document.querySelector("#delete");
+
+deleteButton.addEventListener('click', () => {
+    let currentText = display.textContent;
+
+    if (currentText.length > 0) {
+        currentText = currentText.slice(0, -1);
+        display.textContent = currentText;
+    }
+});
+
+
+// MATH BUTTONS
+const mathBtns = document.querySelectorAll('.math-btn')
+let isStoredNumber = false
+let storedNumber
+
+mathBtns.forEach(function (button) {
+    button.addEventListener('click', () => {
+        const mathInput = button.textContent;
+        if (!isStoredNumber) {
+            storedNumber = display.textContent + ' ' + mathInput
+            isStoredNumber = true
+        } else {
+            storedNumber = storedNumber + ' ' + display.textContent + ' ' + mathInput
+        }
+        display.textContent = '0'
+        initialZeroReplaced = false
+        console.log(storedNumber)
+    });
+});
+
+// EQUALS BUTTON 
+const btnEquals = document.querySelector("#btnEquals");
+let calculatedNumber
+
+btnEquals.addEventListener('click', () => {
+    let calculation = storedNumber + ' ' + display.textContent
+    calculatedNumber = eval(calculation);
+    display.textContent = calculatedNumber
+})
